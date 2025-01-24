@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Headline Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        #dynamic-headline {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin: 50px 20px 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .cta {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .cta a {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .cta a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="dynamic-headline">Welcome to Our Website</h1>
+    <div class="content">
+        <p>We’re thrilled to have you here! Explore our amazing products and services tailored just for you.</p>
+        <p>Check out our exclusive offers and make the most out of your visit.</p>
+        <div class="cta">
+            <a href="/shop">Shop Now</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Define dynamic headlines based on campaigns or sources
+            const dynamicHeadlines = {
+                google: "🔍 Found Us on Google? You're in the Right Place!",
+                facebook: "👋 Hello, Facebook Friends! Check This Out!",
+                holiday_sale: "🎉 Limited-Time Holiday Sale - Shop Now!",
+                free_shipping: "🚚 Free Shipping on All Orders Today!",
+                vip_access: "✨ Exclusive VIP Access - Welcome!"
+            };
+
+            const source = urlParams.get("utm_source");
+
+            // Set headline based on `utm_source`
+            const headline = dynamicHeadlines[source];
+
+            if (headline) {
+                document.getElementById("dynamic-headline").innerText = headline;
+            }
+        });
+    </script>
+</body>
+</html>
