@@ -20,6 +20,3 @@ Here are some example headlines you can configure:
 - **Holiday Sale**: 🎉 Limited-Time Holiday Sale - Shop Now!
 - **Free Shipping**: 🚚 Free Shipping on All Orders Today!
 - **VIP Access**: ✨ Exclusive VIP Access - Welcome!
-
-## Example Usage
-### Input URL
